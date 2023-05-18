@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlightReservationSystem_DB_Project.FlightReservationDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,9 @@ namespace FlightReservationSystem_DB_Project
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        const string CONNECTION_STRING_YOUSSEF = "Data Source=YOUSSEF-LENOVO5\\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True";
+
         public MainWindow()
         {
             InitializeComponent();
