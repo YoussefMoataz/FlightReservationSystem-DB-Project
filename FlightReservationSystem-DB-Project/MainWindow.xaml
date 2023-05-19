@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button Name="registerAdminButton" Content="Register As Admin" HorizontalAlignment="Left" Margin="199,125,0,0" VerticalAlignment="Top" Height="55" Width="140"/>
+        <Button Name="registerCustomerButton" Content="Register As Customer" HorizontalAlignment="Left" Margin="486,125,0,0" VerticalAlignment="Top" Height="55" Width="140"/>
+        <Button Name="loginAdminButton" Content="Login As Admin" HorizontalAlignment="Left" Margin="199,244,0,0" VerticalAlignment="Top" Height="55" Width="140"/>
+        <Button Name="loginCustomerButton" Content="Login As Customer" HorizontalAlignment="Left" Margin="486,244,0,0" VerticalAlignment="Top" Height="55" Width="140"/>
+
     </Grid>
 </Window>

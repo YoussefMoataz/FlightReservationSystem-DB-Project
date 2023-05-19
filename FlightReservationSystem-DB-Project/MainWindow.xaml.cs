@@ -25,9 +25,36 @@ namespace FlightReservationSystem_DB_Project
         public MainWindow()
         {
             InitializeComponent();
+            this.Title = "Flight Reservation System";
 
             SqlConnection sqlConnection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True");
-            
+
+            // assign event handlers
+            registerAdminButton.Click += AdminRegistrationClicked;
+            registerCustomerButton.Click += CustomerRegistrationClicked;
+
+        }
+
+        private void AdminRegistrationClicked(object sender, RoutedEventArgs e)
+        {
+
+            AdminRegistrationForm adminRegistrationForm = new AdminRegistrationForm();
+
+            adminRegistrationForm.Show();
+
+            // this.Close();
+
+        }
+
+        private void CustomerRegistrationClicked(object sender, RoutedEventArgs e)
+        {
+
+            CustomerRegistrationForm customerRegistrationForm = new CustomerRegistrationForm();
+
+            customerRegistrationForm.Show();
+
+            // this.Close();
+
         }
     }
 }
