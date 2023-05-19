@@ -33,16 +33,16 @@ namespace FlightReservationSystem_DB_Project
             registerAdminButton.Click += AdminRegistrationClicked;
             registerCustomerButton.Click += CustomerRegistrationClicked;
 
+            AvailableFlightsForm availableFlightsForm = new AvailableFlightsForm();
+            availableFlightsForm.Show();
+            this.Close();
+
         }
 
         private void AdminRegistrationClicked(object sender, RoutedEventArgs e)
         {
 
-            //AdminRegistrationForm adminRegistrationForm = new AdminRegistrationForm();
-
-            //adminRegistrationForm.Show();
-
-            AvailableFlightsForm adminRegistrationForm = new AvailableFlightsForm();
+            AdminRegistrationForm adminRegistrationForm = new AdminRegistrationForm();
 
             adminRegistrationForm.Show();
 
