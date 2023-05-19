@@ -34,8 +34,8 @@ namespace FlightReservationSystem_DB_Project
             registerCustomerButton.Click += CustomerRegistrationClicked;
 
             AvailableFlightsForm availableFlightsForm = new AvailableFlightsForm();
-            availableFlightsForm.Show();
-            this.Close();
+            //availableFlightsForm.Show();
+            //this.Close();
 
         }
 
