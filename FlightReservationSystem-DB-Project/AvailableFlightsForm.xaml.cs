@@ -29,6 +29,34 @@ namespace FlightReservationSystem_DB_Project
         {
             InitializeComponent();
             ShowFlightsData();
+
+            FlightsTable.MouseDoubleClick += RowChanged;
+
+        }
+
+        private void RowChanged(object sender, MouseButtonEventArgs e)
+        {
+
+            //MessageBox.Show(FlightsTable.SelectedIndex.ToString());
+            try
+            {
+                if (FlightsTable.SelectedItem != null)
+                {
+                    //FLIGHT flight = FlightsTable.SelectedItem as FLIGHT;
+                    //MessageBox.Show(flight.AIRCRAFTID.ToString());
+
+                    DataRowView row = (DataRowView)FlightsTable.SelectedItem;
+                    if (row != null)
+                    {
+                        MessageBox.Show("Destinations: " + row["DESTINATION"].ToString());
+                    }
+
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+
         }
 
         private void ShowFlightsData()

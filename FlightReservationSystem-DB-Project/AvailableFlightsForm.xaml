@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AvailableFlightsForm" Height="450" Width="800">
     <Grid>
-        <DataGrid Name="FlightsTable" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,43,0,0"/>
+        <DataGrid Name="FlightsTable" IsReadOnly="True" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,43,0,0" BorderBrush="#FFC2C2C2" Foreground="Black" GridLinesVisibility="Horizontal" RowBackground="#FFFFF7F7" SelectionMode="Single" RowDetailsVisibilityMode="Visible"/>
 
     </Grid>
 </Window>

@@ -38,7 +38,11 @@ namespace FlightReservationSystem_DB_Project
         private void AdminRegistrationClicked(object sender, RoutedEventArgs e)
         {
 
-            AdminRegistrationForm adminRegistrationForm = new AdminRegistrationForm();
+            //AdminRegistrationForm adminRegistrationForm = new AdminRegistrationForm();
+
+            //adminRegistrationForm.Show();
+
+            AvailableFlightsForm adminRegistrationForm = new AvailableFlightsForm();
 
             adminRegistrationForm.Show();
 
