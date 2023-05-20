@@ -57,7 +57,7 @@ namespace FlightReservationSystem_DB_Project
 
                         ViewFlight viewFlight = new ViewFlight(int.Parse(row["FLIGHTID"].ToString()));
                         viewFlight.Show();
-
+                        this.Close();
                     }
 
                 }

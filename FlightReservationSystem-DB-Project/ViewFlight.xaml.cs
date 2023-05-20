@@ -53,17 +53,14 @@ namespace FlightReservationSystem_DB_Project
 
         private void Book_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(price.ToString());
 
             string selectedOption = "";
             if (economyChoice.IsChecked == true)
             {
-                MessageBox.Show("economy is selected");
                 selectedOption = "economy";
             }
             else if (buisnessChoice.IsChecked == true)
             {
-                MessageBox.Show("buisness is selected");
                 price += 100;
                 selectedOption = "buisness";
 
@@ -78,6 +75,8 @@ namespace FlightReservationSystem_DB_Project
 
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Documents\\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30";
             string query = "INSERT INTO RESERVATION (FLIGHTCLASS,RESERVATIONDATE,FLIGHTID,SEATNUMBER,COST) VALUES (@SelectedOption,@dateTime,@flightid,@available,@price)";
+            string query1 = "update FLIGHT set availableseats=availableseats-1 where flightid=@flightid";
+
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -88,6 +87,10 @@ namespace FlightReservationSystem_DB_Project
                 command.Parameters.AddWithValue("@flightid", flightid);
                 command.Parameters.AddWithValue("@available", available);
 
+                SqlCommand command1 = new SqlCommand(query1, connection);
+                command1.Parameters.AddWithValue("@flightid", flightid);
+
+
 
 
 
@@ -97,13 +100,19 @@ namespace FlightReservationSystem_DB_Project
                 {
                     connection.Open();
                     int rowsAffected = command.ExecuteNonQuery();
+                    int rowsAffected2 = command1.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Data inserted successfully");
+                        MessageBox.Show("Booked successfully");
+                        AvailableFlightsForm availableFlightsForm = new AvailableFlightsForm();
+                        availableFlightsForm.Show();
+                        this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Data not inserted");
+                        MessageBox.Show("Bookinng failed");
+
+
                     }
                 }
                 catch (Exception ex)
