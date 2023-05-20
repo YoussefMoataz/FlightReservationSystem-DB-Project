@@ -22,6 +22,9 @@ namespace FlightReservationSystem_DB_Project
     /// </summary>
     public partial class AddFlightForm : Window
     {
+
+        int flightId = -1;
+
         public AddFlightForm()
         {
             InitializeComponent();
@@ -31,13 +34,14 @@ namespace FlightReservationSystem_DB_Project
 
             AddFlightButton.Click += AddButtonClicked;
 
+            FlightsTable.MouseDoubleClick += RowChanged;
+
         }
 
         private void AddButtonClicked(object sender, EventArgs e)
         {
 
             // Assuming you have obtained the flight details from the user
-            int flightId = 6;
             string source = SourceInput.Text;
             string destination = DestinationInput.Text;
             string departureDate = DepartureDateInput.Text;
@@ -45,6 +49,7 @@ namespace FlightReservationSystem_DB_Project
             int availableSeats = int.Parse(AvailableSeatsInput.Text);
             int aircraftId = 1;
             int airlineId = 1;
+            float price = float.Parse(PriceInput.Text);
 
             // Create or update flight in the database
             using (SqlConnection connection = new SqlConnection("Data Source=YOUSSEF-LENOVO5\\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True"))
@@ -66,7 +71,7 @@ namespace FlightReservationSystem_DB_Project
                             // Flight already exists, update the flight details
                             string updateFlightQuery = "UPDATE FLIGHT SET SOURCE = @Source, DESTINATION = @Destination, " +
                                                        "DEPARTUREDATE = @DepartureDate, ARRIVALDATE = @ArrivalDate, " +
-                                                       "AVAILABLESEATS = @AvailableSeats, AIRCRAFTID = @AircraftId, AIRLINEID = @AirlineId " +
+                                                       "AVAILABLESEATS = @AvailableSeats, AIRCRAFTID = @AircraftId, AIRLINEID = @AirlineId, PRICE = @Price " +
                                                        "WHERE FLIGHTID = @FlightId";
 
                             using (SqlCommand updateFlightCommand = new SqlCommand(updateFlightQuery, connection))
@@ -78,6 +83,7 @@ namespace FlightReservationSystem_DB_Project
                                 updateFlightCommand.Parameters.AddWithValue("@AvailableSeats", availableSeats);
                                 updateFlightCommand.Parameters.AddWithValue("@AircraftId", aircraftId);
                                 updateFlightCommand.Parameters.AddWithValue("@AirlineId", airlineId);
+                                updateFlightCommand.Parameters.AddWithValue("@Price", price);
                                 updateFlightCommand.Parameters.AddWithValue("@FlightId", flightId);
 
                                 updateFlightCommand.ExecuteNonQuery();
@@ -88,9 +94,9 @@ namespace FlightReservationSystem_DB_Project
                         {
                             // Flight doesn't exist, add a new flight
                             string addFlightQuery = "INSERT INTO FLIGHT (SOURCE, DESTINATION, DEPARTUREDATE, " +
-                                                    "ARRIVALDATE, AVAILABLESEATS, AIRCRAFTID, AIRLINEID) " +
+                                                    "ARRIVALDATE, AVAILABLESEATS, AIRCRAFTID, AIRLINEID, PRICE) " +
                                                     "VALUES (@Source, @Destination, @DepartureDate, @ArrivalDate, " +
-                                                    "@AvailableSeats, @AircraftId, @AirlineId)";
+                                                    "@AvailableSeats, @AircraftId, @AirlineId, @Price)";
 
                             using (SqlCommand addFlightCommand = new SqlCommand(addFlightQuery, connection))
                             {
@@ -101,6 +107,7 @@ namespace FlightReservationSystem_DB_Project
                                 addFlightCommand.Parameters.AddWithValue("@AvailableSeats", availableSeats);
                                 addFlightCommand.Parameters.AddWithValue("@AircraftId", aircraftId);
                                 addFlightCommand.Parameters.AddWithValue("@AirlineId", airlineId);
+                                addFlightCommand.Parameters.AddWithValue("@Price", price);
 
                                 addFlightCommand.ExecuteNonQuery();
                                 Console.WriteLine("Flight added successfully.");
@@ -117,6 +124,38 @@ namespace FlightReservationSystem_DB_Project
             }
 
             ShowAllFlightsData();
+
+        }
+
+        private void RowChanged(object sender, MouseButtonEventArgs e)
+        {
+
+            try
+            {
+                if (FlightsTable.SelectedItem != null)
+                {
+
+                    DataRowView row = (DataRowView)FlightsTable.SelectedItem;
+                    if (row != null)
+                    {
+                        flightId = int.Parse(row["FLIGHTID"].ToString());
+                        SourceInput.Text = row["SOURCE"].ToString();
+                        DestinationInput.Text = row["DESTINATION"].ToString();
+                        DepartureDateInput.Text = row["DEPARTUREDATE"].ToString();
+                        ArrivalDateInput.Text = row["ARRIVALDATE"].ToString();
+                        AvailableSeatsInput.Text = row["AVAILABLESEATS"].ToString();
+                        AircraftInput.Text = row["AIRCRAFTID"].ToString();
+                        AirlineInput.Text = row["AIRLINEID"].ToString();
+                        PriceInput.Text = row["PRICE"].ToString();
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
 
         }
 
