@@ -23,7 +23,7 @@ namespace FlightReservationSystem_DB_Project
     public partial class AvailableFlightsForm : Window
     {
 
-        SqlConnection sqlConnection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True");
+        SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Documents\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30");
 
         public AvailableFlightsForm()
         {
