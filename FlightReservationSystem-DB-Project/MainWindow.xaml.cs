@@ -32,7 +32,7 @@ namespace FlightReservationSystem_DB_Project
             registerCustomerButton.Click += CustomerRegistrationClicked;
 
             //ShowFlights();
-            AddAFlight();
+            //AddAFlight();
 
         }
 
