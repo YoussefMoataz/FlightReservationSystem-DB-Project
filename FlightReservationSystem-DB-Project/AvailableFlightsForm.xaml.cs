@@ -28,6 +28,8 @@ namespace FlightReservationSystem_DB_Project
         public AvailableFlightsForm()
         {
             InitializeComponent();
+            this.Title = "Available Flights";
+
             ShowAllFlightsData();
 
             FlightsTable.MouseDoubleClick += RowChanged;
