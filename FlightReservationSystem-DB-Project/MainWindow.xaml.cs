@@ -33,7 +33,8 @@ namespace FlightReservationSystem_DB_Project
             registerAdminButton.Click += AdminRegistrationClicked;
             registerCustomerButton.Click += CustomerRegistrationClicked;
 
-            //ShowFlights();
+            ShowFlights();
+            //AddAFlight();
 
         }
 
@@ -63,6 +64,13 @@ namespace FlightReservationSystem_DB_Project
         {
             AvailableFlightsForm availableFlightsForm = new AvailableFlightsForm();
             availableFlightsForm.Show();
+            this.Close();
+        }
+
+        private void AddAFlight()
+        {
+            AddFlightForm addFlightForm = new AddFlightForm();
+            addFlightForm.Show();
             this.Close();
         }
     }

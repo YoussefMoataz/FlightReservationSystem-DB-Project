@@ -73,11 +73,16 @@ namespace FlightReservationSystem_DB_Project
 
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
 
-            SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(sqlDataAdapter);
-
             DataTable dt = new DataTable("Flight");
 
             sqlDataAdapter.Fill(dt);
+
+            //foreach (DataRow row in dt.Rows)
+            //{
+            //    FLIGHT f = new FLIGHT();
+            //    f.FLIGHTID = (int)row["FLIGHTID"];
+            //    MessageBox.Show(f.FLIGHTID.ToString());
+            //}
 
             FlightsTable.ItemsSource = dt.DefaultView;
 
@@ -85,7 +90,7 @@ namespace FlightReservationSystem_DB_Project
 
         }
 
-        private void ShowFlightsDataWithSource(string source, string destination, string departureDate, string arrivalDate, int availableSeats)
+        private void ShowFlightsDataWithFilters(string source, string destination, string departureDate, string arrivalDate, int availableSeats)
         {
 
             sqlConnection.Open();
@@ -98,8 +103,6 @@ namespace FlightReservationSystem_DB_Project
                 " and availableseats >= " + availableSeats ;
 
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
-
-            SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(sqlDataAdapter);
 
             DataTable dt = new DataTable("Flight");
 
@@ -127,7 +130,7 @@ namespace FlightReservationSystem_DB_Project
                 availableSeatsValue = int.Parse(AvailableSeatsSearchBox.Text);
             }
 
-            ShowFlightsDataWithSource(sourceValue, destinationValue, departureDateValue, arrivalDateValue, availableSeatsValue);
+            ShowFlightsDataWithFilters(sourceValue, destinationValue, departureDateValue, arrivalDateValue, availableSeatsValue);
 
         }
 
