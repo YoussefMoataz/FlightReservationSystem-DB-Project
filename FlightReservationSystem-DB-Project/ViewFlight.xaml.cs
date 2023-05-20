@@ -29,7 +29,8 @@ namespace FlightReservationSystem_DB_Project
             flightid = flightID;
             InitializeComponent();
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Documents\\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            //using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True"))
             {
                 connection.Open();
                 string query = "SELECT * FROM FLIGHT WHERE FLIGHTID = @FLIGHTID;";
@@ -78,7 +79,8 @@ namespace FlightReservationSystem_DB_Project
             string query1 = "update FLIGHT set availableseats=availableseats-1 where flightid=@flightid";
 
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            //using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True"))
             {
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@SelectedOption", selectedOption);
