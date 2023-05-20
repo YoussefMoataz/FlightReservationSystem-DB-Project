@@ -122,8 +122,6 @@ namespace FlightReservationSystem_DB_Project
         private void SearchTextChanged(object sender, EventArgs e)
         {
 
-            //MessageBox.Show(SourceSearchBox.Text);
-
             string sourceValue = SourceSearchBox.Text;
             string destinationValue = DestinationSearchBox.Text;
             string departureDateValue = DepartureDateSearchBox.Text;
@@ -146,7 +144,7 @@ namespace FlightReservationSystem_DB_Project
 
             sqlConnection.Open();
 
-            // Check if the flight already exists in the database
+            // get all flights
             string queryFlightsCount = "SELECT COUNT(*) FROM FLIGHT";
             using (SqlCommand checkFlightCommand = new SqlCommand(queryFlightsCount, sqlConnection))
             {
@@ -157,7 +155,7 @@ namespace FlightReservationSystem_DB_Project
 
             }
 
-            // Check if the flight already exists in the database
+            // get today's flights
             string queryTodayFlightsCount = "SELECT COUNT(*) FROM FLIGHT WHERE DEPARTUREDATE = @DeptDate1 OR DEPARTUREDATE = @DeptDate2";
             using (SqlCommand checkFlightCommand = new SqlCommand(queryTodayFlightsCount, sqlConnection))
             {
