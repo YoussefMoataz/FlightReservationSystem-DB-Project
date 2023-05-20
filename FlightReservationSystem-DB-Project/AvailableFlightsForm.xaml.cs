@@ -28,27 +28,30 @@ namespace FlightReservationSystem_DB_Project
         public AvailableFlightsForm()
         {
             InitializeComponent();
-            ShowFlightsData();
+            ShowAllFlightsData();
 
             FlightsTable.MouseDoubleClick += RowChanged;
+
+            SourceSearchBox.TextChanged += SearchTextChanged;
+            DestinationSearchBox.TextChanged += SearchTextChanged;
+            DepartureDateSearchBox.TextChanged += SearchTextChanged;
+            ArrivalDateSearchBox.TextChanged += SearchTextChanged;
+            AvailableSeatsSearchBox.TextChanged += SearchTextChanged;
 
         }
 
         private void RowChanged(object sender, MouseButtonEventArgs e)
         {
 
-            //MessageBox.Show(FlightsTable.SelectedIndex.ToString());
             try
             {
                 if (FlightsTable.SelectedItem != null)
                 {
-                    //FLIGHT flight = FlightsTable.SelectedItem as FLIGHT;
-                    //MessageBox.Show(flight.AIRCRAFTID.ToString());
 
                     DataRowView row = (DataRowView)FlightsTable.SelectedItem;
                     if (row != null)
                     {
-                        MessageBox.Show("Destinations: " + row["DESTINATION"].ToString());
+                        MessageBox.Show("Flight ID: " + row["FLIGHTID"].ToString());
                     }
 
                 }
@@ -59,7 +62,7 @@ namespace FlightReservationSystem_DB_Project
 
         }
 
-        private void ShowFlightsData()
+        private void ShowAllFlightsData()
         {
 
             sqlConnection.Open();
@@ -77,6 +80,52 @@ namespace FlightReservationSystem_DB_Project
             FlightsTable.ItemsSource = dt.DefaultView;
 
             sqlConnection.Close();
+
+        }
+
+        private void ShowFlightsDataWithSource(string source, string destination, string departureDate, string arrivalDate, int availableSeats)
+        {
+
+            sqlConnection.Open();
+
+            string query = "Select * from Flight" +
+                " where source like '%" + source + "%'" +
+                " and destination like '%" + destination + "%'" +
+                " and departuredate like '%" + departureDate + "%'" +
+                " and arrivaldate like '%" + arrivalDate + "%'" +
+                " and availableseats >= " + availableSeats ;
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+
+            SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(sqlDataAdapter);
+
+            DataTable dt = new DataTable("Flight");
+
+            sqlDataAdapter.Fill(dt);
+
+            FlightsTable.ItemsSource = dt.DefaultView;
+
+            sqlConnection.Close();
+
+        }
+
+        private void SearchTextChanged(object sender, EventArgs e)
+        {
+
+            //MessageBox.Show(SourceSearchBox.Text);
+
+            string sourceValue = SourceSearchBox.Text;
+            string destinationValue = DestinationSearchBox.Text;
+            string departureDateValue = DepartureDateSearchBox.Text;
+            string arrivalDateValue = ArrivalDateSearchBox.Text;
+            int availableSeatsValue = 1;
+
+            if (AvailableSeatsSearchBox.Text.Length > 0)
+            {
+                availableSeatsValue = int.Parse(AvailableSeatsSearchBox.Text);
+            }
+
+            ShowFlightsDataWithSource(sourceValue, destinationValue, departureDateValue, arrivalDateValue, availableSeatsValue);
 
         }
 
