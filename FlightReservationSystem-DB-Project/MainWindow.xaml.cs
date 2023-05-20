@@ -26,6 +26,9 @@ namespace FlightReservationSystem_DB_Project
         {
             InitializeComponent();
             this.Title = "Flight Reservation System";
+            managingCustomerFlights manager = new managingCustomerFlights();
+            manager.Show();
+            this.Close();
 
             SqlConnection sqlConnection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True");
 

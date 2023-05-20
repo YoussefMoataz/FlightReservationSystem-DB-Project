@@ -110,7 +110,6 @@ namespace FlightReservationSystem_DB_Project
                 {
                     connection.Open();
                     int lastInsertedid = Convert.ToInt32(command.ExecuteScalar());
-                    MessageBox.Show("Last inserted ID: " + lastInsertedid);
                     int rowsAffected2 = command1.ExecuteNonQuery();
                     SqlCommand command2 = new SqlCommand(reservesInsertion, connection);
                     command2.Parameters.AddWithValue("@lastinsertedid", lastInsertedid);
