@@ -20,8 +20,13 @@ namespace FlightReservationSystem_DB_Project
     /// </summary>
     public partial class ViewFlight : Window
     {
+            int available= 0;
+            float price = 0;
+            int flightid=0;
+
         public ViewFlight(int flightID)
         {
+            flightid = flightID;
             InitializeComponent();
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Documents\\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30";
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -38,6 +43,8 @@ namespace FlightReservationSystem_DB_Project
                     date.Text = reader["DEPARTUREDATE"].ToString();
                     availableSeats.Text = reader["AVAILABLESEATS"].ToString();
                     cost.Text = reader["PRICE"].ToString();
+                    price = float.Parse(reader["PRICE"].ToString());
+                    available = int.Parse(reader["AVAILABLESEATS"].ToString());
                 }
             }
 
@@ -46,15 +53,63 @@ namespace FlightReservationSystem_DB_Project
 
         private void Book_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show(price.ToString());
+
+            string selectedOption = "";
             if (economyChoice.IsChecked == true)
             {
-                // Option 1 is selected
                 MessageBox.Show("economy is selected");
+                selectedOption = "economy";
             }
             else if (buisnessChoice.IsChecked == true)
             {
-                // Option 2 is selected
                 MessageBox.Show("buisness is selected");
+                price += 100;
+                selectedOption = "buisness";
+
+            }
+            else
+            {
+                MessageBox.Show("Please select a class");
+                return;
+            }
+
+            string dateTime= DateTime.Today.ToString("dd/MM/yyyy");
+
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Documents\\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30";
+            string query = "INSERT INTO RESERVATION (FLIGHTCLASS,RESERVATIONDATE,FLIGHTID,SEATNUMBER,COST) VALUES (@SelectedOption,@dateTime,@flightid,@available,@price)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@SelectedOption", selectedOption);
+                command.Parameters.AddWithValue("@price", price);
+                command.Parameters.AddWithValue("@dateTime", dateTime);
+                command.Parameters.AddWithValue("@flightid", flightid);
+                command.Parameters.AddWithValue("@available", available);
+
+
+
+
+
+
+                try
+                {
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Data inserted successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data not inserted");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
