@@ -20,16 +20,16 @@ namespace FlightReservationSystem_DB_Project
     /// </summary>
     public partial class ViewFlight : Window
     {
-        public ViewFlight()
+        public ViewFlight(int flightID)
         {
             InitializeComponent();
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Documents\\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True"))
             {
                 connection.Open();
                 string query = "SELECT * FROM FLIGHT WHERE FLIGHTID = @FLIGHTID;";
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@FLIGHTID", 2);
+                command.Parameters.AddWithValue("@FLIGHTID", flightID);
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
@@ -37,6 +37,7 @@ namespace FlightReservationSystem_DB_Project
                     destination.Text = reader["DESTINATION"].ToString();
                     date.Text = reader["DEPARTUREDATE"].ToString();
                     availableSeats.Text = reader["AVAILABLESEATS"].ToString();
+                    cost.Text = reader["PRICE"].ToString();
                 }
             }
 

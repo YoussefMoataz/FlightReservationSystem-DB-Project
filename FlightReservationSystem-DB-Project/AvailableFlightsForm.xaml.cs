@@ -53,7 +53,10 @@ namespace FlightReservationSystem_DB_Project
                     DataRowView row = (DataRowView)FlightsTable.SelectedItem;
                     if (row != null)
                     {
-                        MessageBox.Show("Flight ID: " + row["FLIGHTID"].ToString());
+
+                        ViewFlight viewFlight = new ViewFlight(int.Parse(row["FLIGHTID"].ToString()));
+                        viewFlight.Show();
+
                     }
 
                 }
