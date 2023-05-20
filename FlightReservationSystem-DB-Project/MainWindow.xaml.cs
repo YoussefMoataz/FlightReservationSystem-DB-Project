@@ -27,14 +27,12 @@ namespace FlightReservationSystem_DB_Project
             InitializeComponent();
             this.Title = "Flight Reservation System";
 
-            SqlConnection sqlConnection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True");
-
             // assign event handlers
             registerAdminButton.Click += AdminRegistrationClicked;
             registerCustomerButton.Click += CustomerRegistrationClicked;
 
             //ShowFlights();
-            //AddAFlight();
+            AddAFlight();
 
         }
 

@@ -7,6 +7,24 @@
         mc:Ignorable="d"
         Title="AddFlightForm" Height="450" Width="800">
     <Grid>
-        
+        <TextBox Name="SourceInput" HorizontalAlignment="Left" Margin="39,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="DestinationInput" HorizontalAlignment="Left" Margin="221,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="DepartureDateInput" HorizontalAlignment="Left" Margin="400,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="ArrivalDateInput" HorizontalAlignment="Left" Margin="580,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="AvailableSeatsInput" InputScope="Number" HorizontalAlignment="Left" Margin="38,131,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="AircraftInput" InputScope="Number" HorizontalAlignment="Left" Margin="218,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="AirlineInput" InputScope="Number" HorizontalAlignment="Left" Margin="400,139,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="PriceInput" InputScope="Number" HorizontalAlignment="Left" Margin="580,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Source" HorizontalAlignment="Left" Margin="39,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.274,-0.684"/>
+        <Label Content="Destination" HorizontalAlignment="Left" Margin="221,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.274,-0.684"/>
+        <Label Content="Departure Date" HorizontalAlignment="Left" Margin="400,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.274,-0.684"/>
+        <Label Content="Arrival Date" HorizontalAlignment="Left" Margin="580,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.274,-0.684"/>
+        <Label Content="Available Seats" HorizontalAlignment="Left" Margin="38,100,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.274,-0.684"/>
+        <Label Content="Aircraft ID" HorizontalAlignment="Left" Margin="218,108,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.274,-0.684"/>
+        <Label Content="Airline ID" HorizontalAlignment="Left" Margin="400,113,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.274,-0.684"/>
+        <Label Content="Price" HorizontalAlignment="Left" Margin="580,116,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.274,-0.684"/>
+        <Button Name="AddFlightButton" Content="Add Flight" HorizontalAlignment="Left" Margin="720,98,0,0" VerticalAlignment="Top"/>
+        <DataGrid Name="FlightsTable" IsReadOnly="True" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,190,0,0" BorderBrush="#FFC2C2C2" Foreground="Black" GridLinesVisibility="Horizontal" RowBackground="#FFFFF7F7" SelectionMode="Single" RowDetailsVisibilityMode="Visible"/>
+
     </Grid>
 </Window>
