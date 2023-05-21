@@ -19,11 +19,12 @@ namespace FlightReservationSystem_DB_Project
     /// <summary>
     /// Interaction logic for managingCustomerFlights.xaml
     /// </summary>
-    public partial class managingCustomerFlights : Window
+    public partial class ManagingCustomerFlights : Window
     {
-        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Documents\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30");
+        //SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Documents\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection connection = new SqlConnection("Data Source=YOUSSEF-LENOVO5\\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True");
 
-        public managingCustomerFlights()
+        public ManagingCustomerFlights()
         {
             InitializeComponent();
             ShowcCustomerFlightsData();

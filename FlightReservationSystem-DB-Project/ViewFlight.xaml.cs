@@ -29,7 +29,7 @@ namespace FlightReservationSystem_DB_Project
         {
             flightid = flightID;
             InitializeComponent();
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Documents\\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30";
+            //string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Documents\\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30";
             //using (SqlConnection connection = new SqlConnection(connectionString))
             using (SqlConnection connection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True"))
             {
@@ -81,8 +81,8 @@ namespace FlightReservationSystem_DB_Project
             string reservesInsertion = "insert into reserves (pnr,ssn) values (@lastinsertedid,@ssn) ";
 
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            //using (SqlConnection connection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True"))
+            //using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True"))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(reservationInsertion, connection);
