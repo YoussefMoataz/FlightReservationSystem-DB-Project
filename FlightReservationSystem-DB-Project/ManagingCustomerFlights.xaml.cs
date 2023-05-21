@@ -39,9 +39,7 @@ namespace FlightReservationSystem_DB_Project
             sqlDataAdapter.SelectCommand = new SqlCommand(query, connection);
             sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@ssn", ssn);
 
-
             DataTable dt = new DataTable("CustomerFlight");
-
             sqlDataAdapter.Fill(dt);
 
             

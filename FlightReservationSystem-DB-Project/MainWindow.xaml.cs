@@ -33,7 +33,10 @@ namespace FlightReservationSystem_DB_Project
 
             //ShowFlights();
             //AddAFlight();
-            ManageFlights();
+            UpdateReservation update = new UpdateReservation(1,1);
+            update.Show();
+            this.Close();
+            //ManageFlights();
 
         }
 
