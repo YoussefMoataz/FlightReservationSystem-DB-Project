@@ -27,5 +27,6 @@ namespace FlightReservationSystem_DB_Project
         public int? AIRCRAFTID { get; set; }
 
         public int? AIRLINEID { get; set; }
+
     }
 }

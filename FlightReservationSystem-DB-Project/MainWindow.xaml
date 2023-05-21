@@ -7,10 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Name="registerAdminButton" Content="Register As Admin" HorizontalAlignment="Left" Margin="199,125,0,0" VerticalAlignment="Top" Height="55" Width="140"/>
-        <Button Name="registerCustomerButton" Content="Register As Customer" HorizontalAlignment="Left" Margin="486,125,0,0" VerticalAlignment="Top" Height="55" Width="140"/>
-        <Button Name="loginAdminButton" Content="Login As Admin" HorizontalAlignment="Left" Margin="199,244,0,0" VerticalAlignment="Top" Height="55" Width="140"/>
-        <Button Name="loginCustomerButton" Content="Login As Customer" HorizontalAlignment="Left" Margin="486,244,0,0" VerticalAlignment="Top" Height="55" Width="140"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="77*"/>
+            <ColumnDefinition Width="83*"/>
+        </Grid.ColumnDefinitions>
+        <Button Name="registerAdminButton" Content="Register As Admin" HorizontalAlignment="Left" Margin="199,125,0,0" VerticalAlignment="Top" Height="55" Width="140" Click="registerAdminButton_Click"/>
+        <Button Name="registerCustomerButton" Content="Register As Customer" HorizontalAlignment="Left" Margin="101,125,0,0" VerticalAlignment="Top" Height="55" Width="140" Grid.Column="1" Click="registerCustomerButton_Click"/>
+        <Button Name="loginAdminButton" Content="Login As Admin" HorizontalAlignment="Left" Margin="199,244,0,0" VerticalAlignment="Top" Height="55" Width="140" Click="loginAdminButton_Click"/>
+        <Button Name="loginCustomerButton" Content="Login As Customer" HorizontalAlignment="Left" Margin="101,244,0,0" VerticalAlignment="Top" Height="55" Width="140" Grid.Column="1" Click="loginCustomerButton_Click"/>
 
     </Grid>
 </Window>
