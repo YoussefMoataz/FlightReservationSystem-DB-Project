@@ -21,11 +21,13 @@ namespace FlightReservationSystem_DB_Project
     /// </summary>
     public partial class ManagingCustomerFlights : Window
     {
+        int userSsn = 0;
         SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Documents\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30");
         //SqlConnection connection = new SqlConnection("Data Source=YOUSSEF-LENOVO5\\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True");
 
-        public ManagingCustomerFlights()
+        public ManagingCustomerFlights(int ssn)
         {
+            userSsn = ssn;
             InitializeComponent();
             ShowcCustomerFlightsData();
         }
@@ -39,9 +41,7 @@ namespace FlightReservationSystem_DB_Project
             sqlDataAdapter.SelectCommand = new SqlCommand(query, connection);
             sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@ssn", ssn);
 
-
             DataTable dt = new DataTable("CustomerFlight");
-
             sqlDataAdapter.Fill(dt);
 
             
@@ -51,9 +51,31 @@ namespace FlightReservationSystem_DB_Project
             connection.Close();
 
         }
+        
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            try
+            {
+                if (FlightsTable.SelectedItem != null)
+                {
 
+                    DataRowView row = (DataRowView)FlightsTable.SelectedItem;
+                    if (row != null)
+                    {
+                        int flightId = int.Parse(row["RESERVATIONID"].ToString());
+                        int userSsn_ = int.Parse(userSsn.ToString());
+
+                        UpdateReservation update = new UpdateReservation(flightId, userSsn_);
+                        update.Show();
+                        this.Close();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
     }
 }
