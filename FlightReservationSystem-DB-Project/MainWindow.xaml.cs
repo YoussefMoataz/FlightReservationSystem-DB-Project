@@ -26,12 +26,15 @@ namespace FlightReservationSystem_DB_Project
         {
             InitializeComponent();
             this.Title = "Flight Reservation System";
+            managingCustomerFlights manager = new managingCustomerFlights();
+            manager.Show();
+            this.Close();
 
             // assign event handlers
             registerAdminButton.Click += AdminRegistrationClicked;
             registerCustomerButton.Click += CustomerRegistrationClicked;
 
-            //ShowFlights();
+            ShowFlights();
             //AddAFlight();
 
         }

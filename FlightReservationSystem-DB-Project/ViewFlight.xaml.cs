@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -73,25 +74,32 @@ namespace FlightReservationSystem_DB_Project
             }
 
             string dateTime= DateTime.Today.ToString("dd/MM/yyyy");
-
+            int ssn = 1;
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Documents\\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30";
-            string query = "INSERT INTO RESERVATION (FLIGHTCLASS,RESERVATIONDATE,FLIGHTID,SEATNUMBER,COST) VALUES (@SelectedOption,@dateTime,@flightid,@available,@price)";
-            string query1 = "update FLIGHT set availableseats=availableseats-1 where flightid=@flightid";
+            string reservationInsertion = "INSERT INTO RESERVATION (FLIGHTCLASS,RESERVATIONDATE,FLIGHTID,SEATNUMBER,COST) VALUES (@SelectedOption,@dateTime,@flightid,@available,@price);SELECT SCOPE_IDENTITY()";
+            string updateSeat = "update FLIGHT set availableseats=availableseats-1 where flightid=@flightid";
+            string reservesInsertion = "insert into reserves (pnr,ssn) values (@lastinsertedid,@ssn) ";
 
 
-            //using (SqlConnection connection = new SqlConnection(connectionString))
-            using (SqlConnection connection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True"))
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            //using (SqlConnection connection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True"))
             {
-                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+                SqlCommand command = new SqlCommand(reservationInsertion, connection);
                 command.Parameters.AddWithValue("@SelectedOption", selectedOption);
                 command.Parameters.AddWithValue("@price", price);
                 command.Parameters.AddWithValue("@dateTime", dateTime);
                 command.Parameters.AddWithValue("@flightid", flightid);
                 command.Parameters.AddWithValue("@available", available);
 
-                SqlCommand command1 = new SqlCommand(query1, connection);
+                
+                
+                SqlCommand command1 = new SqlCommand(updateSeat, connection);
                 command1.Parameters.AddWithValue("@flightid", flightid);
 
+                connection.Close();
+               
+                
 
 
 
@@ -101,9 +109,13 @@ namespace FlightReservationSystem_DB_Project
                 try
                 {
                     connection.Open();
-                    int rowsAffected = command.ExecuteNonQuery();
+                    int lastInsertedid = Convert.ToInt32(command.ExecuteScalar());
                     int rowsAffected2 = command1.ExecuteNonQuery();
-                    if (rowsAffected > 0)
+                    SqlCommand command2 = new SqlCommand(reservesInsertion, connection);
+                    command2.Parameters.AddWithValue("@lastinsertedid", lastInsertedid);
+                    command2.Parameters.AddWithValue("@ssn", ssn);
+                    int rowsAffected3 = command2.ExecuteNonQuery();
+                    if (lastInsertedid > 0)
                     {
                         MessageBox.Show("Booked successfully");
                         AvailableFlightsForm availableFlightsForm = new AvailableFlightsForm();

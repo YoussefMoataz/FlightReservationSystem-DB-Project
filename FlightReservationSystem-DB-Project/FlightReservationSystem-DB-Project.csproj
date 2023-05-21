@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="managingCustomerFlights.xaml.cs">
+      <DependentUpon>managingCustomerFlights.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewFlight.xaml.cs">
       <DependentUpon>ViewFlight.xaml</DependentUpon>
     </Compile>
@@ -108,6 +111,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="managingCustomerFlights.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ViewFlight.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
