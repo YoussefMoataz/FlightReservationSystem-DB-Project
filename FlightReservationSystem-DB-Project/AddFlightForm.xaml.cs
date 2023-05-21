@@ -47,8 +47,8 @@ namespace FlightReservationSystem_DB_Project
             string departureDate = DepartureDateInput.Text;
             string arrivalDate = ArrivalDateInput.Text;
             int availableSeats = int.Parse(AvailableSeatsInput.Text);
-            int aircraftId = 1;
-            int airlineId = 1;
+            int aircraftId = int.Parse(AircraftInput.Text);
+            int airlineId = int.Parse(AirlineInput.Text);
             float price = float.Parse(PriceInput.Text);
 
             // Create or update flight in the database

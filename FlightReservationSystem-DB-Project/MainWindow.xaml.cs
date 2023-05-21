@@ -31,9 +31,9 @@ namespace FlightReservationSystem_DB_Project
             registerAdminButton.Click += AdminRegistrationClicked;
             registerCustomerButton.Click += CustomerRegistrationClicked;
 
-            //ShowFlights();
+            ShowFlights();
             //AddAFlight();
-            ManageFlights();
+            //ManageFlights();
 
         }
 

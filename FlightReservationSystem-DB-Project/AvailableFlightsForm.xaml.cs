@@ -23,8 +23,8 @@ namespace FlightReservationSystem_DB_Project
     public partial class AvailableFlightsForm : Window
     {
 
-        //SqlConnection sqlConnection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True");
-        SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Documents\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection sqlConnection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True");
+        //SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Documents\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30");
 
         public AvailableFlightsForm()
         {
@@ -74,7 +74,9 @@ namespace FlightReservationSystem_DB_Project
 
             sqlConnection.Open();
 
-            string query = "Select * from Flight";
+            string query = "Select FLIGHTID, SOURCE, DESTINATION, DEPARTUREDATE, ARRIVALDATE, AVAILABLESEATS, MODEL as PLANE, PRICE " +
+                "from Flight, AIRCRAFT " +
+                "where FLIGHT.AIRCRAFTID = AIRCRAFT.AIRCRAFTID;";
 
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
 
