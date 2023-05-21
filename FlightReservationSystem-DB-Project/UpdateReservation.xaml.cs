@@ -24,13 +24,12 @@ namespace FlightReservationSystem_DB_Project
         string currentClass="";
         string prevClass = "";
         float price = 0;
-        int CurrPnr = 34;
-        int CurrSsn = 1;
+        int CurrPnr = 0;
+        int CurrSsn = 0;
         int flightid=0;
         public UpdateReservation(int pnr,int ssn)
         {
-            pnr = 36;
-            ssn = 1;
+            
             CurrPnr=pnr;
             CurrSsn=ssn;
             InitializeComponent();
@@ -101,6 +100,8 @@ namespace FlightReservationSystem_DB_Project
 
                 command.ExecuteNonQuery();
                 connection.Close();
+                ManagingCustomerFlights manage = new ManagingCustomerFlights(CurrSsn);
+                manage.Show();
                 this.Close();
 
             }
@@ -133,6 +134,8 @@ namespace FlightReservationSystem_DB_Project
                 command1.ExecuteNonQuery();
                 command2.ExecuteNonQuery();
                 connection.Close();
+                ManagingCustomerFlights manage = new ManagingCustomerFlights(CurrSsn);
+                manage.Show();
                 this.Close();
 
 
