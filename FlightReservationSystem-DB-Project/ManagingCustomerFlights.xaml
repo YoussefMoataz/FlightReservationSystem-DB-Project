@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ManagingCustomerFlights" Height="450" Width="800">
     <Grid>
-        <DataGrid Name="FlightsTable"  d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged"/>
-
+        <DataGrid Name="FlightsTable" IsReadOnly="True" SelectionMode="Single" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged"/>
+        
     </Grid>
 </Window>

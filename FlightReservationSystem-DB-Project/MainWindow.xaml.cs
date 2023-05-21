@@ -33,6 +33,9 @@ namespace FlightReservationSystem_DB_Project
 
             //ShowFlights();
             //AddAFlight();
+            //UpdateReservation update = new UpdateReservation(1,1);
+            //update.Show();
+            //this.Close();
             ManageFlights();
 
         }
@@ -75,7 +78,7 @@ namespace FlightReservationSystem_DB_Project
         
         private void ManageFlights()
         {
-            ManagingCustomerFlights manager = new ManagingCustomerFlights();
+            ManagingCustomerFlights manager = new ManagingCustomerFlights(1);
             manager.Show();
             this.Close();
         }
