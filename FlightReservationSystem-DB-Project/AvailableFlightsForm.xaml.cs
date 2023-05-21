@@ -23,8 +23,8 @@ namespace FlightReservationSystem_DB_Project
     public partial class AvailableFlightsForm : Window
     {
 
-        //SqlConnection sqlConnection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True");
-        SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Documents\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection sqlConnection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True");
+        //SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Documents\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30");
 
         public AvailableFlightsForm()
         {
@@ -32,6 +32,7 @@ namespace FlightReservationSystem_DB_Project
             this.Title = "Available Flights";
 
             ShowAllFlightsData();
+            ShowFlightsReport();
 
             FlightsTable.MouseDoubleClick += RowChanged;
 
@@ -121,8 +122,6 @@ namespace FlightReservationSystem_DB_Project
         private void SearchTextChanged(object sender, EventArgs e)
         {
 
-            //MessageBox.Show(SourceSearchBox.Text);
-
             string sourceValue = SourceSearchBox.Text;
             string destinationValue = DestinationSearchBox.Text;
             string departureDateValue = DepartureDateSearchBox.Text;
@@ -135,6 +134,42 @@ namespace FlightReservationSystem_DB_Project
             }
 
             ShowFlightsDataWithFilters(sourceValue, destinationValue, departureDateValue, arrivalDateValue, availableSeatsValue);
+
+        }
+
+        private void ShowFlightsReport()
+        {
+
+            string report = "";
+
+            sqlConnection.Open();
+
+            // get all flights
+            string queryFlightsCount = "SELECT COUNT(*) FROM FLIGHT";
+            using (SqlCommand checkFlightCommand = new SqlCommand(queryFlightsCount, sqlConnection))
+            {
+
+                int existingFlightsCount = (int)checkFlightCommand.ExecuteScalar();
+
+                report += "There are " + existingFlightsCount.ToString() + " available flights.\n";
+
+            }
+
+            // get today's flights
+            string queryTodayFlightsCount = "SELECT COUNT(*) FROM FLIGHT WHERE DEPARTUREDATE = @DeptDate1 OR DEPARTUREDATE = @DeptDate2";
+            using (SqlCommand checkFlightCommand = new SqlCommand(queryTodayFlightsCount, sqlConnection))
+            {
+                checkFlightCommand.Parameters.AddWithValue("@DeptDate1", DateTime.Today.ToString("dd/MM/yyyy"));
+                checkFlightCommand.Parameters.AddWithValue("@DeptDate2", DateTime.Today.ToString("dd/M/yyyy"));
+                int todayFlightsCount = (int)checkFlightCommand.ExecuteScalar();
+
+                report += "There are " + todayFlightsCount.ToString() + " available flights today.\n";
+
+            }
+
+            sqlConnection.Close();
+
+            ReportTextBlock.Text = report;
 
         }
 

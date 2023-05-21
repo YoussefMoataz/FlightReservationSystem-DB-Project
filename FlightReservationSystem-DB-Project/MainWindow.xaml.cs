@@ -30,8 +30,6 @@ namespace FlightReservationSystem_DB_Project
             manager.Show();
             this.Close();
 
-            SqlConnection sqlConnection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True");
-
             // assign event handlers
             registerAdminButton.Click += AdminRegistrationClicked;
             registerCustomerButton.Click += CustomerRegistrationClicked;
