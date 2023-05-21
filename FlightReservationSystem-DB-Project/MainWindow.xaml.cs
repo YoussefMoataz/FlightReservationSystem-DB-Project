@@ -36,7 +36,7 @@ namespace FlightReservationSystem_DB_Project
             //UpdateReservation update = new UpdateReservation(1,1);
             //update.Show();
             //this.Close();
-            ManageFlights();
+            //ManageFlights();
 
         }
 
