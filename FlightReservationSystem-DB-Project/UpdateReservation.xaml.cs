@@ -34,8 +34,8 @@ namespace FlightReservationSystem_DB_Project
             CurrSsn=ssn;
             InitializeComponent();
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Documents\\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            //using (SqlConnection connection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True"))
+            //using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True"))
             {
                 connection.Open();
                 string query = "SELECT * FROM RESERVATION WHERE RESERVATIONID=(select pnr from reserves where ssn=@ssn and pnr=@pnr) ";
@@ -74,7 +74,8 @@ namespace FlightReservationSystem_DB_Project
         {
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Documents\\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30";
             string updateReservation = "update reservation set flightclass=@flightclass  where reservationid=@reservationid;update reservation set cost=@price  where reservationid=@reservationid ";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            //using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True"))
             {
                 connection.Open();
 
@@ -115,8 +116,8 @@ namespace FlightReservationSystem_DB_Project
 
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Documents\\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30";
 
-            //using (SqlConnection connection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True"))
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            //using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True"))
             {
                 connection.Open();
 

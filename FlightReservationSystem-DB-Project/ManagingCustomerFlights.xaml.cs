@@ -22,8 +22,8 @@ namespace FlightReservationSystem_DB_Project
     public partial class ManagingCustomerFlights : Window
     {
         int userSsn = 0;
-        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Documents\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30");
-        //SqlConnection connection = new SqlConnection("Data Source=YOUSSEF-LENOVO5\\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True");
+        //SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Documents\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection connection = new SqlConnection("Data Source=YOUSSEF-LENOVO5\\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True");
 
         public ManagingCustomerFlights(int ssn)
         {

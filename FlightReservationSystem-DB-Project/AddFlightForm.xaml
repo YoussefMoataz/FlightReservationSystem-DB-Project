@@ -9,8 +9,8 @@
     <Grid>
         <TextBox Name="SourceInput" HorizontalAlignment="Left" Margin="39,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="DestinationInput" HorizontalAlignment="Left" Margin="221,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="DepartureDateInput" HorizontalAlignment="Left" Margin="400,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="ArrivalDateInput" HorizontalAlignment="Left" Margin="580,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <DatePicker Name="DepartureDateInput" HorizontalAlignment="Left" Margin="400,61,0,0" Text="" VerticalAlignment="Top" Width="120"/>
+        <DatePicker Name="ArrivalDateInput" HorizontalAlignment="Left" Margin="580,61,0,0" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="AvailableSeatsInput" InputScope="Number" HorizontalAlignment="Left" Margin="38,131,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="AircraftInput" InputScope="Number" HorizontalAlignment="Left" Margin="218,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="AirlineInput" InputScope="Number" HorizontalAlignment="Left" Margin="400,139,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>

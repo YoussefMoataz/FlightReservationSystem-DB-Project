@@ -20,7 +20,8 @@ namespace FlightReservationSystem_DB_Project
     /// </summary>
     public partial class CustomerRegistrationForm : Window
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-6BNM9LM\MSSQLSERVER1;Initial Catalog=FlightReservation;Integrated Security=True");
+        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-6BNM9LM\MSSQLSERVER1;Initial Catalog=FlightReservation;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True");
         public CustomerRegistrationForm()
         {
             InitializeComponent();

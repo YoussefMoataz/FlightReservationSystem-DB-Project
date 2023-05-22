@@ -22,7 +22,8 @@ namespace FlightReservationSystem_DB_Project
     /// 
     public partial class UpdateAdminProfile : Window
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-6BNM9LM\MSSQLSERVER1;Initial Catalog=FlightReservation;Integrated Security=True");
+        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-6BNM9LM\MSSQLSERVER1;Initial Catalog=FlightReservation;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True");
 
         public Admin admin { get; set; }
         public UpdateAdminProfile(Admin admin)

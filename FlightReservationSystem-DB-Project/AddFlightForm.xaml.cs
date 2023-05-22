@@ -88,6 +88,17 @@ namespace FlightReservationSystem_DB_Project
 
                                 updateFlightCommand.ExecuteNonQuery();
                                 Console.WriteLine("Flight updated successfully.");
+
+                                flightId = -1;
+                                SourceInput.Text = "";
+                                DestinationInput.Text = "";
+                                DepartureDateInput.Text = "";
+                                ArrivalDateInput.Text = "";
+                                AvailableSeatsInput.Text = "";
+                                AircraftInput.Text = "";
+                                AirlineInput.Text = "";
+                                PriceInput.Text = "";
+
                             }
                         }
                         else

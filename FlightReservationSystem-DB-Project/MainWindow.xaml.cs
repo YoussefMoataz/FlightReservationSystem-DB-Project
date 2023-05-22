@@ -37,6 +37,7 @@ namespace FlightReservationSystem_DB_Project
             //update.Show();
             //this.Close();
             //ManageFlights();
+            //ShowAircrafts();
 
         }
 
@@ -107,6 +108,12 @@ namespace FlightReservationSystem_DB_Project
             customerLogin.Show();
             this.Close();
 
+        }
+
+        private void ShowAircrafts()
+        {
+            AircraftWindow aircraft = new AircraftWindow();
+            aircraft.Show();
         }
     }
 }

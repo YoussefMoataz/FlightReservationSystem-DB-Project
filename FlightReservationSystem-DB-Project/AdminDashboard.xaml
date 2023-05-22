@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="AdminDashboard" Height="450" Width="800">
     <Grid>
-        <Button Content="Update  Profile" HorizontalAlignment="Left" Margin="319,332,0,0" VerticalAlignment="Top" Height="58" Width="186" FontSize="15" Click="Button_Click"/>
+        <Button Content="Add/Update flight" HorizontalAlignment="Left" Margin="319,78,0,0" VerticalAlignment="Top" Height="58" Width="186" FontSize="15" Click="Flight_Button_Click"/>
+        <Button Content="Add/Update aircraft" HorizontalAlignment="Left" Margin="319,217,0,0" VerticalAlignment="Top" Height="58" Width="186" FontSize="15" Click="Aircraft_Button_Click"/>
+        <Button Content="Update  Profile" HorizontalAlignment="Left" Margin="319,332,0,0" VerticalAlignment="Top" Height="58" Width="186" FontSize="15" Click="UpdateProfile_Button_Click"/>
 
     </Grid>
 </Window>

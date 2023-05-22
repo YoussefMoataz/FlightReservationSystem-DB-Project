@@ -28,11 +28,22 @@ namespace FlightReservationSystem_DB_Project
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Flight_Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddFlightForm addFlightForm = new AddFlightForm();
+            addFlightForm.Show();
+        }
+
+        private void Aircraft_Button_Click(object sender, RoutedEventArgs e)
+        {
+            AircraftWindow aircraft = new AircraftWindow();
+            aircraft.Show();
+        }
+
+        private void UpdateProfile_Button_Click(object sender, RoutedEventArgs e)
         {
             UpdateAdminProfile update = new UpdateAdminProfile(admin);
             update.Show();
-            //update.Hide();
         }
     }
 }
