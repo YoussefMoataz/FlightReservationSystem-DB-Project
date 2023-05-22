@@ -32,7 +32,7 @@
         </ComboBox>
         <ComboBox x:Name="txtAccessLevel" HorizontalAlignment="Left" Margin="168,322,0,0" VerticalAlignment="Top" Width="189">
             <ComboBoxItem Content="Super Adminstrator"/>
-            <ComboBoxItem Content="Fleight Adminstrator"/>
+            <ComboBoxItem Content="Flight Adminstrator"/>
         </ComboBox>
     </Grid>
 </Window>

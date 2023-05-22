@@ -73,7 +73,7 @@ namespace FlightReservationSystem_DB_Project
                     cmd.Parameters.AddWithValue("@SE", txtState.Text);
                     cmd.Parameters.AddWithValue("@ST", txtStreet.Text);
                     cmd.Parameters.AddWithValue("@ZC", txtZipCode.Text);
-                    cmd.Parameters.AddWithValue("@Mkey", txtSSN.Text);
+                    cmd.Parameters.AddWithValue("@Mkey", Customer.SSN);
 
 
 
@@ -82,6 +82,8 @@ namespace FlightReservationSystem_DB_Project
 
 
                     con.Close();
+
+                    this.Close();
 
                 }
                 catch (Exception Ex)

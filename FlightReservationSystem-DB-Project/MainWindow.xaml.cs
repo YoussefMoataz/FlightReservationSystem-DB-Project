@@ -35,7 +35,7 @@ namespace FlightReservationSystem_DB_Project
 
             adminRegistrationForm.Show();
 
-            this.Close();
+            //this.Close();
         }
 
         private void registerCustomerButton_Click(object sender, RoutedEventArgs e)
@@ -44,7 +44,7 @@ namespace FlightReservationSystem_DB_Project
 
             customerRegistrationForm.Show();
 
-            this.Close();
+            //this.Close();
         }
 
         private void loginAdminButton_Click(object sender, RoutedEventArgs e)
@@ -52,14 +52,14 @@ namespace FlightReservationSystem_DB_Project
             AdminLogin adminLogin = new AdminLogin();
 
             adminLogin.Show();
-            this.Close();   
+            //this.Close();   
         }
 
         private void loginCustomerButton_Click(object sender, RoutedEventArgs e)
         {
             CustomerLogin customerLogin = new CustomerLogin();
             customerLogin.Show();
-            this.Close();
+            //this.Close();
 
         }
 

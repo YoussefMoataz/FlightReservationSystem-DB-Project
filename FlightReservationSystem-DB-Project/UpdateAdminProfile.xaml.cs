@@ -69,7 +69,7 @@ namespace FlightReservationSystem_DB_Project
                     cmd.Parameters.AddWithValue("@P", txtPassword.Text);
                     cmd.Parameters.AddWithValue("@D", txtDateOfBirth.Text);
                     cmd.Parameters.AddWithValue("@Ag", txtAge.Text);
-                    cmd.Parameters.AddWithValue("@Mkey", txtSSN.Text);
+                    cmd.Parameters.AddWithValue("@Mkey", admin.SSN);
 
 
 
@@ -79,6 +79,8 @@ namespace FlightReservationSystem_DB_Project
 
 
                     con.Close();
+
+                    this.Close();
 
                 }
                 catch (Exception Ex)

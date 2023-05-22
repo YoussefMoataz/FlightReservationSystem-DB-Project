@@ -64,6 +64,8 @@ namespace FlightReservationSystem_DB_Project
 
                     con.Close();
 
+                    this.Close();
+
                 }
                 catch (Exception Ex)
                 {
