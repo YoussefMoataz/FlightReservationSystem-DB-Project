@@ -214,9 +214,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="egyptairmainlogo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="explore-flight-16x9.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
