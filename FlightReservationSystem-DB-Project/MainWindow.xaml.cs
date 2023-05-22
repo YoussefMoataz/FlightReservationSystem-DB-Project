@@ -83,5 +83,30 @@ namespace FlightReservationSystem_DB_Project
             this.Close();
         }
 
+        private void registerAdminButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void registerCustomerButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void loginAdminButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdminLogin adminLogin = new AdminLogin();
+
+            adminLogin.Show();
+            this.Close();   
+        }
+
+        private void loginCustomerButton_Click(object sender, RoutedEventArgs e)
+        {
+            CustomerLogin customerLogin = new CustomerLogin();
+            customerLogin.Show();
+            this.Close();
+
+        }
     }
 }

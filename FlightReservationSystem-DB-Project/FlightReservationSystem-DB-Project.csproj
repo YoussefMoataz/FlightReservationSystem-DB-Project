@@ -64,8 +64,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Admin.cs" />
+    <Compile Include="AdminDashboard.xaml.cs">
+      <DependentUpon>AdminDashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLogin.xaml.cs">
+      <DependentUpon>AdminLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs" />
+    <Compile Include="CustomerDashboard.xaml.cs">
+      <DependentUpon>CustomerDashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerLogin.xaml.cs">
+      <DependentUpon>CustomerLogin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagingCustomerFlights.xaml.cs">
       <DependentUpon>ManagingCustomerFlights.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAdminProfile.xaml.cs">
+      <DependentUpon>UpdateAdminProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCustomerProfile.xaml.cs">
+      <DependentUpon>UpdateCustomerProfile.xaml</DependentUpon>
     </Compile>
     <Compile Include="UpdateReservation.xaml.cs">
       <DependentUpon>UpdateReservation.xaml</DependentUpon>
@@ -77,11 +97,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AdminDashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AdminRegistrationForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AvailableFlightsForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomerDashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomerLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -115,6 +151,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ManagingCustomerFlights.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateAdminProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateCustomerProfile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

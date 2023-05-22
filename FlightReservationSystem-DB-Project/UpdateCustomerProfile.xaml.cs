@@ -16,25 +16,41 @@ using System.Windows.Shapes;
 namespace FlightReservationSystem_DB_Project
 {
     /// <summary>
-    /// Interaction logic for CustomerRegistrationForm.xaml
+    /// Interaction logic for UpdateCustomerProfile.xaml
     /// </summary>
-    public partial class CustomerRegistrationForm : Window
+    public partial class UpdateCustomerProfile : Window
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-6BNM9LM\MSSQLSERVER1;Initial Catalog=FlightReservation;Integrated Security=True");
-        public CustomerRegistrationForm()
+
+        public Customer Customer { get; set; }
+        public UpdateCustomerProfile(Customer customer)
         {
             InitializeComponent();
-            this.Title = "Customer Registration";
+            this.Customer = customer;
+            UpdateTextboxes();
         }
 
-        private void ComboBox_SelectionChanged_2(object sender, SelectionChangedEventArgs e)
+        private void UpdateTextboxes()
         {
+            txtSSN.Text = Customer.SSN.ToString();
+            txtFName.Text = Customer.FirstName;
+            txtLName.Text = Customer.LastName;
+            txtDateOfBirth.Text = Customer.DateOfBirth;
+            txtAge.Text = Customer.Age.ToString();
+            txtEmail.Text = Customer.Email;
+            txtPassword.Text = Customer.Password;
+            txtGender.Text = Customer.Gender;
+            txtCity.Text = Customer.City;
+            txtState.Text = Customer.State;
+            txtStreet.Text = Customer.Street;
+            txtZipCode.Text = Customer.ZipCode;
 
+            // set other textboxes as needed
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (txtFName.Text == "" || txtLName.Text == "" || txtEmail.Text == "" || txtPassword.Text == "" || txtAge.Text == "" || txtZipCode.Text==""|| txtState.Text == "" || txtStreet.Text=="" || txtCity.Text == "" || txtDateOfBirth.Text == "" || txtGender.Text == "")
+            if (txtFName.Text == "" || txtLName.Text == "" || txtEmail.Text == "" || txtPassword.Text == "" || txtAge.Text == "" || txtZipCode.Text == "" || txtState.Text == "" || txtStreet.Text == "" || txtCity.Text == "" || txtDateOfBirth.Text == "" || txtGender.Text == "")
             {
                 MessageBox.Show("Missing Information");
             }
@@ -43,7 +59,7 @@ namespace FlightReservationSystem_DB_Project
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("Insert into CUSTOMER(SSN,FIRSTNAME,LASTNAME,GENDER,EMAIL,PASSWORD,DATEOFBIRTH,AGE,CITY,STATE,STREET,ZIPCODE)values(@SSN,@FN,@LN,@G,@E,@P,@D,@AG,@CI,@SE,@ST,@ZC)", con);
+                    SqlCommand cmd = new SqlCommand("update CUSTOMER set SSN=@SSN,FIRSTNAME=@FN,LASTNAME=@LN,GENDER=@G,EMAIL=@E,PASSWORD=@P,DATEOFBIRTH=@D,AGE=@AG,CITY=@CI,STATE=@SE,STREET=@ST,ZIPCODE=@ZC Where SSN=@Mkey", con);
                     cmd.Parameters.AddWithValue("@SSN", txtSSN.Text);
                     cmd.Parameters.AddWithValue("@FN", txtFName.Text);
                     cmd.Parameters.AddWithValue("@LN", txtLName.Text);
@@ -56,9 +72,12 @@ namespace FlightReservationSystem_DB_Project
                     cmd.Parameters.AddWithValue("@SE", txtState.Text);
                     cmd.Parameters.AddWithValue("@ST", txtStreet.Text);
                     cmd.Parameters.AddWithValue("@ZC", txtZipCode.Text);
+                    cmd.Parameters.AddWithValue("@Mkey", txtSSN.Text);
+
+
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Customer Added");
+                    MessageBox.Show("Customer updated");
 
 
                     con.Close();
@@ -70,11 +89,6 @@ namespace FlightReservationSystem_DB_Project
 
                 }
             }
-        }
-
-        private void txtGender_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }
