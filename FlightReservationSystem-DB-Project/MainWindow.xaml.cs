@@ -27,71 +27,24 @@ namespace FlightReservationSystem_DB_Project
             InitializeComponent();
             this.Title = "Flight Reservation System";
 
-            // assign event handlers
-            registerAdminButton.Click += AdminRegistrationClicked;
-            registerCustomerButton.Click += CustomerRegistrationClicked;
-
-            //ShowFlights();
-            //AddAFlight();
-            //UpdateReservation update = new UpdateReservation(1,1);
-            //update.Show();
-            //this.Close();
-            //ManageFlights();
-            //ShowAircrafts();
-
-        }
-
-        private void AdminRegistrationClicked(object sender, RoutedEventArgs e)
-        {
-
-            AdminRegistrationForm adminRegistrationForm = new AdminRegistrationForm();
-
-            adminRegistrationForm.Show();
-
-            // this.Close();
-
-        }
-
-        private void CustomerRegistrationClicked(object sender, RoutedEventArgs e)
-        {
-
-            CustomerRegistrationForm customerRegistrationForm = new CustomerRegistrationForm();
-
-            customerRegistrationForm.Show();
-
-            // this.Close();
-
-        }
-
-        private void ShowFlights()
-        {
-            AvailableFlightsForm availableFlightsForm = new AvailableFlightsForm(1);
-            availableFlightsForm.Show();
-            this.Close();
-        }
-
-        private void AddAFlight()
-        {
-            AddFlightForm addFlightForm = new AddFlightForm();
-            addFlightForm.Show();
-            this.Close();
-        }
-        
-        private void ManageFlights()
-        {
-            ManagingCustomerFlights manager = new ManagingCustomerFlights(1);
-            manager.Show();
-            this.Close();
         }
 
         private void registerAdminButton_Click(object sender, RoutedEventArgs e)
         {
+            AdminRegistrationForm adminRegistrationForm = new AdminRegistrationForm();
 
+            adminRegistrationForm.Show();
+
+            this.Close();
         }
 
         private void registerCustomerButton_Click(object sender, RoutedEventArgs e)
         {
+            CustomerRegistrationForm customerRegistrationForm = new CustomerRegistrationForm();
 
+            customerRegistrationForm.Show();
+
+            this.Close();
         }
 
         private void loginAdminButton_Click(object sender, RoutedEventArgs e)
@@ -110,10 +63,6 @@ namespace FlightReservationSystem_DB_Project
 
         }
 
-        private void ShowAircrafts()
-        {
-            AircraftWindow aircraft = new AircraftWindow();
-            aircraft.Show();
-        }
+
     }
 }
