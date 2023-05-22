@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FlightReservationSystem_DB_Project"
         mc:Ignorable="d"
         Title="AdminRegistrationForm" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FFF4F4F4">
         <TextBlock HorizontalAlignment="Center" Margin="0,34,0,0" TextWrapping="Wrap" Text="Admin Registeration" VerticalAlignment="Top" Height="50" Width="244" FontSize="23" FontWeight="Bold"/>
         <Label Content="First Name:" HorizontalAlignment="Left" Margin="60,119,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.509,2.297"/>
         <Label Content="Last Name:" HorizontalAlignment="Left" Margin="425,119,0,0" VerticalAlignment="Top" FontSize="15"/>
@@ -18,7 +18,7 @@
         <Label Content="Age:" HorizontalAlignment="Left" Margin="60,266,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.509,2.297"/>
         <Label Content="Date of Birth:" HorizontalAlignment="Left" Margin="425,263,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.509,2.297"/>
         <Label Content="Level Access:" HorizontalAlignment="Left" Margin="60,318,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.509,2.297"/>
-        <Button Content="Register" HorizontalAlignment="Left" Margin="639,360,0,0" VerticalAlignment="Top" Height="35" Width="94" Click="Button_Click" FontSize="15"/>
+        <Button Content="Register" HorizontalAlignment="Left" Margin="639,360,0,0" VerticalAlignment="Top" Height="35" Width="94" Click="Button_Click" FontSize="15" Background="#FFCCEBFF"/>
         <DatePicker x:Name="txtDateOfBirth" HorizontalAlignment="Left" Margin="544,267,0,0" VerticalAlignment="Top" Width="189" Height="22"/>
         <TextBox x:Name="txtFName" HorizontalAlignment="Left" Margin="168,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189"/>
         <TextBox x:Name="txtSSN" HorizontalAlignment="Left" Margin="168,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189"/>

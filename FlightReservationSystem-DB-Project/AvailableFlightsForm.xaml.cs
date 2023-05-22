@@ -105,8 +105,10 @@ namespace FlightReservationSystem_DB_Project
 
             sqlConnection.Open();
 
-            string query = "Select * from Flight" +
-                " where source like '%" + source + "%'" +
+            string query = "Select FLIGHTID, SOURCE, DESTINATION, DEPARTUREDATE, ARRIVALDATE, AVAILABLESEATS, MODEL as PLANE, PRICE" +
+                " from Flight, AIRCRAFT" +
+                " where FLIGHT.AIRCRAFTID = AIRCRAFT.AIRCRAFTID" +
+                " and source like '%" + source + "%'" +
                 " and destination like '%" + destination + "%'" +
                 " and departuredate like '%" + departureDate + "%'" +
                 " and arrivaldate like '%" + arrivalDate + "%'" +

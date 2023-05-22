@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FlightReservationSystem_DB_Project"
         mc:Ignorable="d"
         Title="UpdateCustomerProfile" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FFF4F4F4">
         <TextBlock HorizontalAlignment="Center" Margin="0,27,0,0" TextWrapping="Wrap" Text="Customer Registeration" VerticalAlignment="Top" Height="50" Width="288" FontSize="23" FontWeight="Bold"/>
         <Label Content="First Name:" HorizontalAlignment="Left" Margin="58,85,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.509,2.297"/>
         <Label Content="Last Name:" HorizontalAlignment="Left" Margin="422,85,0,0" VerticalAlignment="Top" FontSize="15"/>
@@ -17,7 +17,7 @@
         <Label Content="Password:" HorizontalAlignment="Left" Margin="58,183,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.509,2.297"/>
         <Label Content="Age:" HorizontalAlignment="Left" Margin="58,232,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.509,2.297"/>
         <Label Content="Date of Birth:" HorizontalAlignment="Left" Margin="422,229,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.509,2.297"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="637,380,0,0" VerticalAlignment="Top" Height="35" Width="94" Click="Button_Click" FontSize="15"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="637,380,0,0" VerticalAlignment="Top" Height="35" Width="94" Click="Button_Click" FontSize="15" Background="#FFCCFFD6"/>
         <DatePicker x:Name="txtDateOfBirth" HorizontalAlignment="Left" Margin="542,233,0,0" VerticalAlignment="Top" Width="189" Height="22"/>
         <TextBox x:Name="txtFName" HorizontalAlignment="Left" Margin="166,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189"/>
         <TextBox x:Name="txtSSN" HorizontalAlignment="Left" Margin="166,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189"/>

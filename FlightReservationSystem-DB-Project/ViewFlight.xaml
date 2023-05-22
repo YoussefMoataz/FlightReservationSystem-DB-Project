@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FlightReservationSystem_DB_Project"
         mc:Ignorable="d"
         Title="ViewFlight" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FFF4F4F4">
         <TextBlock x:Name="source" HorizontalAlignment="Left" Margin="101,64,0,0" VerticalAlignment="Top" Width="200" Background="#FFD2D2D2" Height="30" FontWeight="Bold" TextAlignment="Center"/>
         <TextBlock x:Name="destination" HorizontalAlignment="Left" Margin="101,114,0,0" VerticalAlignment="Top" Width="200" Background="#FFD2D2D2" Height="30" TextAlignment="Center" FontWeight="Bold"/>
         <TextBlock x:Name="date" HorizontalAlignment="Left" Margin="101,164,0,0" VerticalAlignment="Top" Width="200" Background="#FFD2D2D2" Height="30" TextAlignment="Center" FontWeight="Bold"/>

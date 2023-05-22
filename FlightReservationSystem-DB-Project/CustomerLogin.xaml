@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:FlightReservationSystem_DB_Project"
         mc:Ignorable="d"
         Title="CustomerLogin" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FFF4F4F4">
         <Label Content="SSN:" HorizontalAlignment="Left" Margin="266,148,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.509,2.297" HorizontalContentAlignment="Center"/>
         <Label Content="Password:" HorizontalAlignment="Left" Margin="266,224,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.509,2.297"/>
         <TextBox x:Name="txtSSN" HorizontalAlignment="Left" Margin="374,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189"/>
         <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="374,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189"/>
         <Label Content="Customer Login" HorizontalAlignment="Left" Margin="345,53,0,0" VerticalAlignment="Top" FontSize="23" FontWeight="Bold"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="372,306,0,0" VerticalAlignment="Top" Height="35" Width="94" Click="Button_Click" FontSize="15" RenderTransformOrigin="-0.98,-0.257"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="372,306,0,0" VerticalAlignment="Top" Height="35" Width="94" Click="Button_Click" FontSize="15" RenderTransformOrigin="-0.98,-0.257" Background="#FFCCFFD6"/>
 
     </Grid>
 </Window>

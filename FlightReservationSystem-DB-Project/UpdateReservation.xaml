@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FlightReservationSystem_DB_Project"
         mc:Ignorable="d"
         Title="Flight info" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FFF4F4F4">
         <TextBlock x:Name="seatNumber" HorizontalAlignment="Left" Margin="178,88,0,0" VerticalAlignment="Top" Width="200" Background="#FFD2D2D2" Height="30" FontWeight="Bold" TextAlignment="Center"/>
         <TextBlock x:Name="date_" HorizontalAlignment="Left" Margin="178,151,0,0" VerticalAlignment="Top" Width="200" Background="#FFD2D2D2" Height="30" TextAlignment="Center" FontWeight="Bold"/>
         <TextBlock x:Name="cost_" HorizontalAlignment="Left" Margin="511,87,0,0" VerticalAlignment="Top" Width="122" Background="#FFD2D2D2" Height="30" Foreground="Black" TextAlignment="Center" FontWeight="Bold"/>
@@ -14,7 +14,7 @@
         <RadioButton x:Name="economyChoice_" Content="Economy" HorizontalAlignment="Left" Margin="476,189,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" GroupName="class"/>
         <RadioButton x:Name="buisnessChoice_" Content="Buisness" HorizontalAlignment="Left" Margin="476,169,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" GroupName="class"/>
         <Button x:Name="save" Content="Save" HorizontalAlignment="Left" Margin="455,282,0,0" VerticalAlignment="Top" Width="166" Height="41" Click="save_Click" FontSize="22" Background="#FF69E43E"/>
-        <Button x:Name="cancel" Content="cancel" HorizontalAlignment="Left" Margin="178,282,0,0" VerticalAlignment="Top" Width="166" Height="41" Click="cancel_Click" FontSize="22" Background="Red"/>
+        <Button x:Name="cancel" Content="Cancel" HorizontalAlignment="Left" Margin="178,282,0,0" VerticalAlignment="Top" Width="166" Height="41" Click="cancel_Click" FontSize="22" Background="Red"/>
 
         <TextBlock HorizontalAlignment="Left" Margin="445,143,0,0" TextWrapping="Wrap" Text="choose one to change your class" VerticalAlignment="Top" Height="20" Width="208"/>
         <TextBlock HorizontalAlignment="Left" Margin="305,10,0,0" TextWrapping="Wrap" Text="flight info" VerticalAlignment="Top" Height="29" Width="208" FontSize="20" TextAlignment="Center"/>

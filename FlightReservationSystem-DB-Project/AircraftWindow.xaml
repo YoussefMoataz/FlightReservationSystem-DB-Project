@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FlightReservationSystem_DB_Project"
         mc:Ignorable="d"
         Title="AircraftWindow" Height="450" Width="800">
-    <Grid Margin="2,1,0,38">
+    <Grid Margin="2,1,0,38" Background="#FFF4F4F4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -19,17 +19,17 @@
         <Label x:Name="New_Aircraft_Copy2" Content="Aircraft Type" HorizontalAlignment="Left" Margin="396,100,0,0" VerticalAlignment="Top" Height="31" Width="386" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="New_Aircraft_Copy3" Content="Aircraft Capacity" HorizontalAlignment="Left" Margin="568,100,0,0" VerticalAlignment="Top" Height="31" Width="386" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="New_Aircraft_Copy4" Content="All Aircrafts" HorizontalAlignment="Center" Margin="0,223,0,0" VerticalAlignment="Top" Height="56" Width="148" FontSize="24" FontWeight="Bold"/>
-        <Button x:Name="AddBtn" Content="Add" HorizontalAlignment="Left" Margin="158,177,0,0" VerticalAlignment="Top" Width="123" Height="26" Click="AddBtn_Click">
+        <Button x:Name="AddBtn" Content="Add" HorizontalAlignment="Left" Margin="158,177,0,0" VerticalAlignment="Top" Width="123" Height="26" Click="AddBtn_Click" Background="#FFD5FFE2">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="EditBtn" Content="Edit" HorizontalAlignment="Center" Margin="0,177,0,0" VerticalAlignment="Top" Width="124" Height="26" Click="EditBtn_Click">
+        <Button x:Name="EditBtn" Content="Edit" HorizontalAlignment="Center" Margin="0,177,0,0" VerticalAlignment="Top" Width="124" Height="26" Click="EditBtn_Click" Background="#FFFFFBB9">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="DeleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="522,177,0,0" VerticalAlignment="Top" Width="122" Height="26" Click="Button_Click">
+        <Button x:Name="DeleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="522,177,0,0" VerticalAlignment="Top" Width="122" Height="26" Click="Button_Click" Background="#FFFF8383">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:FlightReservationSystem_DB_Project"
         mc:Ignorable="d"
         Title="AdminDashboard" Height="450" Width="800">
-    <Grid>
-        <Button Content="Add/Update flight" HorizontalAlignment="Left" Margin="319,78,0,0" VerticalAlignment="Top" Height="58" Width="186" FontSize="15" Click="Flight_Button_Click"/>
-        <Button Content="Add/Update aircraft" HorizontalAlignment="Left" Margin="319,217,0,0" VerticalAlignment="Top" Height="58" Width="186" FontSize="15" Click="Aircraft_Button_Click"/>
-        <Button Content="Update  Profile" HorizontalAlignment="Left" Margin="319,332,0,0" VerticalAlignment="Top" Height="58" Width="186" FontSize="15" Click="UpdateProfile_Button_Click"/>
+    <Grid Background="#FFF4F4F4">
+        <Button Content="Add/Update flight" HorizontalAlignment="Left" Margin="319,64,0,0" VerticalAlignment="Top" Height="58" Width="186" FontSize="15" Click="Flight_Button_Click" Background="#FFF0D4AE"/>
+        <Button Content="Add/Update aircraft" HorizontalAlignment="Left" Margin="319,0,0,0" VerticalAlignment="Center" Height="58" Width="186" FontSize="15" Click="Aircraft_Button_Click" Background="#FFF0D4AE"/>
+        <Button Content="Update  Profile" HorizontalAlignment="Left" Margin="319,315,0,0" VerticalAlignment="Top" Height="58" Width="186" FontSize="15" Click="UpdateProfile_Button_Click" Background="#FFF0D4AE"/>
 
     </Grid>
 </Window>

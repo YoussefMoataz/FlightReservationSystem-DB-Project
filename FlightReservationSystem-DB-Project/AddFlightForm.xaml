@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FlightReservationSystem_DB_Project"
         mc:Ignorable="d"
         Title="AddFlightForm" Height="450" Width="820">
-    <Grid>
+    <Grid Background="#FFF4F4F4">
         <TextBox Name="SourceInput" HorizontalAlignment="Left" Margin="39,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="DestinationInput" HorizontalAlignment="Left" Margin="221,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <DatePicker Name="DepartureDateInput" HorizontalAlignment="Left" Margin="400,61,0,0" Text="" VerticalAlignment="Top" Width="120"/>
@@ -23,8 +23,8 @@
         <Label Content="Aircraft ID" HorizontalAlignment="Left" Margin="218,108,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.274,-0.684"/>
         <Label Content="Airline ID" HorizontalAlignment="Left" Margin="400,113,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.274,-0.684"/>
         <Label Content="Price" HorizontalAlignment="Left" Margin="580,116,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.274,-0.684"/>
-        <Button Name="AddFlightButton" Content="Save Flight" HorizontalAlignment="Left" Margin="720,98,0,0" VerticalAlignment="Top"/>
-        <DataGrid Name="FlightsTable" IsReadOnly="True" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,190,0,0" BorderBrush="#FFC2C2C2" Foreground="Black" GridLinesVisibility="Horizontal" RowBackground="#FFFFF7F7" SelectionMode="Single" RowDetailsVisibilityMode="Visible"/>
+        <Button Name="AddFlightButton" Content="Save Flight" HorizontalAlignment="Left" Margin="729,96,0,0" VerticalAlignment="Top" Background="#FF9AD99D" Height="31" Width="72"/>
+        <DataGrid Name="FlightsTable" IsReadOnly="True" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,190,0,0" BorderBrush="#FFC2C2C2" Foreground="Black" GridLinesVisibility="Horizontal" RowBackground="#FFFFF7F7" SelectionMode="Single" RowDetailsVisibilityMode="Visible" Background="#FFF4F4F4"/>
 
     </Grid>
 </Window>

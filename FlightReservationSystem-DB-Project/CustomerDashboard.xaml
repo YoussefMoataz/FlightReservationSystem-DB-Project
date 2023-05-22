@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:FlightReservationSystem_DB_Project"
         mc:Ignorable="d"
         Title="CustomerDashboard" Height="450" Width="800">
-    <Grid>
-        <Button Content="Reserve a flight" HorizontalAlignment="Left" Margin="298,84,0,0" VerticalAlignment="Top" Height="58" Width="177" FontSize="15" Click="Reserve_Button_Click"/>
-        <Button Content="View reservations" HorizontalAlignment="Left" Margin="298,203,0,0" VerticalAlignment="Top" Height="58" Width="177" FontSize="15" Click="Reservations_Button_Click"/>
-        <Button Content="Update profile" HorizontalAlignment="Left" Margin="298,326,0,0" VerticalAlignment="Top" Height="58" Width="177" FontSize="15" Click="UpdateProfile_Button_Click"/>
+    <Grid Background="#FFF4F4F4">
+        <Button Content="Reserve a flight" HorizontalAlignment="Center" Margin="0,73,0,0" VerticalAlignment="Top" Height="58" Width="176" FontSize="15" Click="Reserve_Button_Click" Background="#FFD9B4F6"/>
+        <Button Content="View reservations" HorizontalAlignment="Center" VerticalAlignment="Center" Height="58" Width="177" FontSize="15" Click="Reservations_Button_Click" Background="#FFD9B4F6"/>
+        <Button Content="Update profile" HorizontalAlignment="Center" Margin="0,310,0,0" VerticalAlignment="Top" Height="58" Width="177" FontSize="15" Click="UpdateProfile_Button_Click" Background="#FFD9B4F6"/>
 
     </Grid>
 </Window>

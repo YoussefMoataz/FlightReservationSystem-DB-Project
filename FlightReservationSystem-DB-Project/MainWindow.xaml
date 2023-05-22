@@ -7,14 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/explore-flight-16x9.jpg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="77*"/>
             <ColumnDefinition Width="83*"/>
         </Grid.ColumnDefinitions>
-        <Button Name="registerAdminButton" Content="Register As Admin" HorizontalAlignment="Left" Margin="199,125,0,0" VerticalAlignment="Top" Height="55" Width="140" Click="registerAdminButton_Click"/>
-        <Button Name="registerCustomerButton" Content="Register As Customer" HorizontalAlignment="Left" Margin="101,125,0,0" VerticalAlignment="Top" Height="55" Width="140" Grid.Column="1" Click="registerCustomerButton_Click"/>
-        <Button Name="loginAdminButton" Content="Login As Admin" HorizontalAlignment="Left" Margin="199,244,0,0" VerticalAlignment="Top" Height="55" Width="140" Click="loginAdminButton_Click"/>
-        <Button Name="loginCustomerButton" Content="Login As Customer" HorizontalAlignment="Left" Margin="101,244,0,0" VerticalAlignment="Top" Height="55" Width="140" Grid.Column="1" Click="loginCustomerButton_Click"/>
+        <Button Name="registerAdminButton" Content="Register As Admin" HorizontalAlignment="Left" Margin="172,122,0,0" VerticalAlignment="Top" Height="55" Width="140" Click="registerAdminButton_Click" Background="#FF235F86" Foreground="White">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Name="registerCustomerButton" Content="Register As Customer" HorizontalAlignment="Left" Margin="74,122,0,0" VerticalAlignment="Top" Height="55" Width="140" Grid.Column="1" Click="registerCustomerButton_Click" Background="#FFCCFFD6">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Name="loginAdminButton" Content="Login As Admin" HorizontalAlignment="Left" Margin="172,241,0,0" VerticalAlignment="Top" Height="55" Width="140" Click="loginAdminButton_Click" Background="#FF235F86" Foreground="White">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Name="loginCustomerButton" Content="Login As Customer" HorizontalAlignment="Left" Margin="74,241,0,0" VerticalAlignment="Top" Height="55" Width="140" Grid.Column="1" Click="loginCustomerButton_Click" Background="#FFCCFFD6">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
 
     </Grid>
 </Window>
