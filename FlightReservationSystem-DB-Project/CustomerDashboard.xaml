@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="CustomerDashboard" Height="450" Width="800">
     <Grid>
-        <Button Content="Update profile" HorizontalAlignment="Left" Margin="298,326,0,0" VerticalAlignment="Top" Height="58" Width="177" FontSize="15" Click="Button_Click"/>
+        <Button Content="Reserve a flight" HorizontalAlignment="Left" Margin="298,84,0,0" VerticalAlignment="Top" Height="58" Width="177" FontSize="15" Click="Reserve_Button_Click"/>
+        <Button Content="View reservations" HorizontalAlignment="Left" Margin="298,203,0,0" VerticalAlignment="Top" Height="58" Width="177" FontSize="15" Click="Reservations_Button_Click"/>
+        <Button Content="Update profile" HorizontalAlignment="Left" Margin="298,326,0,0" VerticalAlignment="Top" Height="58" Width="177" FontSize="15" Click="UpdateProfile_Button_Click"/>
 
     </Grid>
 </Window>

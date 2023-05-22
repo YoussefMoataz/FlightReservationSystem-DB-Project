@@ -27,7 +27,21 @@ namespace FlightReservationSystem_DB_Project
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Reserve_Button_Click(object sender, RoutedEventArgs e)
+        {
+            AvailableFlightsForm availableFlightsForm = new AvailableFlightsForm(Customer.SSN);
+            availableFlightsForm.Show();
+            //update.Hide();
+        }
+
+        private void Reservations_Button_Click(object sender, RoutedEventArgs e)
+        {
+            ManagingCustomerFlights manager = new ManagingCustomerFlights(Customer.SSN);
+            manager.Show();
+            //update.Hide();
+        }
+
+        private void UpdateProfile_Button_Click(object sender, RoutedEventArgs e)
         {
             UpdateCustomerProfile update = new UpdateCustomerProfile(Customer);
             update.Show();

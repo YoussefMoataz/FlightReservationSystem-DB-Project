@@ -26,8 +26,11 @@ namespace FlightReservationSystem_DB_Project
         SqlConnection sqlConnection = new SqlConnection(@"Data Source=YOUSSEF-LENOVO5\SQLEXPRESS;Initial Catalog=FlightReservation;Integrated Security=True");
         //SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Documents\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30");
 
-        public AvailableFlightsForm()
+        int ssn = -1;
+
+        public AvailableFlightsForm(int SSN)
         {
+            ssn = SSN;
             InitializeComponent();
             this.Title = "Available Flights";
 
@@ -56,7 +59,7 @@ namespace FlightReservationSystem_DB_Project
                     if (row != null)
                     {
 
-                        ViewFlight viewFlight = new ViewFlight(int.Parse(row["FLIGHTID"].ToString()));
+                        ViewFlight viewFlight = new ViewFlight(int.Parse(row["FLIGHTID"].ToString()), ssn);
                         viewFlight.Show();
                         this.Close();
                     }

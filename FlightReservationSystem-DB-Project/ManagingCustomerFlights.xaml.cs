@@ -35,11 +35,10 @@ namespace FlightReservationSystem_DB_Project
         {
 
             connection.Open();
-            int ssn = 1;
             string query = "SELECT *FROM reservation WHERE RESERVATIONID IN (SELECT pnr   FROM reserves WHERE SSN = @ssn)";
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
             sqlDataAdapter.SelectCommand = new SqlCommand(query, connection);
-            sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@ssn", ssn);
+            sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@ssn", userSsn);
 
             DataTable dt = new DataTable("CustomerFlight");
             sqlDataAdapter.Fill(dt);

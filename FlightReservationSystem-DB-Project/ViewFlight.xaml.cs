@@ -24,10 +24,12 @@ namespace FlightReservationSystem_DB_Project
             int available= 0;
             float price = 0;
             int flightid=0;
+        int ssn = -1;
 
-        public ViewFlight(int flightID)
+        public ViewFlight(int flightID, int SSN)
         {
             flightid = flightID;
+            ssn = SSN;
             InitializeComponent();
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Documents\\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30";
             //using (SqlConnection connection = new SqlConnection(connectionString))
@@ -74,7 +76,6 @@ namespace FlightReservationSystem_DB_Project
             }
 
             string dateTime= DateTime.Today.ToString("dd/MM/yyyy");
-            int ssn = 1;
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\user\\Documents\\FlightReservation.mdf;Integrated Security=True;Connect Timeout=30";
             string reservationInsertion = "INSERT INTO RESERVATION (FLIGHTCLASS,RESERVATIONDATE,FLIGHTID,SEATNUMBER,COST) VALUES (@SelectedOption,@dateTime,@flightid,@available,@price);SELECT SCOPE_IDENTITY()";
             string updateSeat = "update FLIGHT set availableseats=availableseats-1 where flightid=@flightid";
@@ -111,7 +112,7 @@ namespace FlightReservationSystem_DB_Project
                     if (lastInsertedid > 0)
                     {
                         MessageBox.Show("Booked successfully");
-                        AvailableFlightsForm availableFlightsForm = new AvailableFlightsForm();
+                        AvailableFlightsForm availableFlightsForm = new AvailableFlightsForm(ssn);
                         availableFlightsForm.Show();
                         this.Close();
                     }

@@ -65,7 +65,7 @@ namespace FlightReservationSystem_DB_Project
 
         private void ShowFlights()
         {
-            AvailableFlightsForm availableFlightsForm = new AvailableFlightsForm();
+            AvailableFlightsForm availableFlightsForm = new AvailableFlightsForm(1);
             availableFlightsForm.Show();
             this.Close();
         }
