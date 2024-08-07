@@ -76,13 +76,11 @@ Here are some screenshots of the application in action:
 
 ![Available Flights](Screenshots/AvailableFlights.png)
 
-### Users Flights Update
+### Flight Info
 
 ![Users Flights Update](Screenshots/CustomersFlightsUpdate.png)
 
 ## 🤝 Contributors
-
-This project is maintained by the following contributors:
 
 - [Youssef Moataz](https://github.com/YoussefMoataz)
 - [Hassan Magdi](https://github.com/hassan1876)
