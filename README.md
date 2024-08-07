@@ -20,15 +20,15 @@ The Flight Reservation System is a software application developed using C# that 
 
 - **Flight Search and Booking**
   - Showing a list of available flights based on criteria (date, source, destination, required number of seats)
-  - Performing operations on flights: booking, cancelling, changing flight class
+  - Performing operations on flights: booking, canceling, changing flight class
 
 ## Conceptual ERD
 
-![Conceptual ERD](path/to/conceptual_erd_image.png)
+![Conceptual ERD](Screenshots/ConceptualERD.png)
 
 ## Corresponding Physical ERD
 
-![Physical ERD](path/to/physical_erd_image.png)
+![Physical ERD](Screenshots/PhysicalERD.png)
 
 ## Database Implementation on MS SQL Server
 
@@ -61,17 +61,24 @@ The application program implemented using C# includes the following features:
 
 Here are some screenshots of the application in action:
 
+## Home Page
+![Home Page](Screenshots/Homepage.png))
+
 ### User Registration
 
-![User Registration](path/to/user_registration_screenshot.png)
+![User Registration](Screenshots/CustomerRegistration.png)
 
-### Flight Search
+### Admin Login
 
-![Flight Search](path/to/flight_search_screenshot.png)
+![Admin Login](Screenshots/AdminLogin.png)
 
-### Booking Confirmation
+### Available Flights
 
-![Booking Confirmation](path/to/booking_confirmation_screenshot.png)
+![Available Flights](Screenshots/AvailableFlights.png)
+
+### Users Flights Update
+
+![Users Flights Update](Screenshots/CustomersFlightsUpdate.png)
 
 ## 🤝 Contributors
 
